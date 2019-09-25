@@ -20,7 +20,7 @@ build_args = [
   '-Wall',
   '-Wextra',
   '-Werror',
-  '-pedantic-errors',
+  '-Wpedantic',
   '-Wunused',
 ]
 
