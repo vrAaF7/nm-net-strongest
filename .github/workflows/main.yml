@@ -12,7 +12,13 @@ jobs:
       - name: Update Aptitude.
         run: sudo apt-get update
       - name: Install Meson.
-        run: sudo apt-get install -y meson ninja-build libnm-dev libglib2.0-dev network-manager-dev clang clang-tools-6.0
+        run: sudo apt-get install -y meson
+      - name: Install Ninja.
+        run: sudo apt-get install -y ninja-build
+      - name: Install libraries.
+        run: sudo apt-get install -y libnm-dev libglib2.0-dev network-manager-dev
+      - name: Install clang.
+        run: sudo apt-get -y clang-tools
       - name: Initialise Meson.
         run: meson build
       - name: Run Ninja.
