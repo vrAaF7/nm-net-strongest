@@ -12,7 +12,7 @@ jobs:
       - name: Update Aptitude.
         run: sudo apt-get update
       - name: Install Meson.
-        run: sudo apt-get install -y meson ninja-build
+        run: sudo apt-get install -y meson ninja-build libnm-dev libglib2.0-dev
       - name: Initialise Meson.
         run: meson build
       - name: Run Ninja.
