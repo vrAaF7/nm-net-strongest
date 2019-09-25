@@ -30,10 +30,10 @@ main (void) {
     for (i = 0; i < (int) conns->len; i++) {
         NMActiveConnection *conn;
         const char *uuid, *type, *id;
-        conn = conns->pdata[i];
         const GPtrArray *devices;
         NMDevice *device;
 
+        conn = conns->pdata[i];
         uuid = nm_active_connection_get_uuid (conn);
         type = nm_active_connection_get_connection_type (conn);
         id = nm_active_connection_get_id (conn);
