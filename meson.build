@@ -2,7 +2,7 @@ project('nm-conn-strongest',
         'c',
         version: '0.1.0',
         default_options: [
-          'c_std=gnu99'])
+          'c_std=c89'])
 
 project_source_files = [
   'src/main.c',
