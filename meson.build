@@ -14,6 +14,10 @@ project_dependencies = [
   dependency('gio-2.0'),
 ]
 
+include_dirs = [
+  'include/'
+]
+
 build_args = [
   '-DPROJECT_NAME=' + meson.project_name(),
   '-DPROJECT_VERSION=' + meson.project_version(),
@@ -28,6 +32,7 @@ project_target = executable(
   meson.project_name(),
   project_source_files,
   dependencies: project_dependencies,
+  include_directories: include_dirs,
   install: true,
   c_args: build_args,
 )
