@@ -1,15 +1,21 @@
 name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Initialise Meson
-      run: meson build
-    - name: Run Ninja
-      run: ninja -C build
+      - uses: actions/checkout@v1
+      - name: Update Aptitude.
+        run: apt-get update
+      - name: Install Meson.
+        run: apt-get install -y meson ninja
+      - name: Initialise Meson.
+        run: meson build
+      - name: Run Ninja.
+        run: ninja -C build
+      - name: Perform static analysis.
+        run: ninja -C build scan-build
